@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "accountDao" class = "com.demo.myspring.dao.impl.AccountDaoImpl">
+        <property name = "ConnectionUtils" ref = "connectionUtils"></property>
+    </bean>
+    <bean id = "transferService" class = "com.demo.myspring.service.impl.TransferServiceImpl">
+        <property name = "AccountDao" ref = "accountDao"></property>
+    </bean>
+
+    <!--连接工具类-->
+    <bean id = "connectionUtils" class = "com.demo.myspring.utils.ConnectionUtils"></bean>
+
+    <!--事务管理器-->
+    <bean id = "transactionManager" class = "com.demo.myspring.utils.TransactionManager">
+        <property name = "ConnectionUtils" ref = "connectionUtils"></property>
+    </bean>
+
+
+    <bean id = "ProxyFactory" class = "com.demo.myspring.spring.Factory.ProxyFactory">
+        <property name = "TransactionManager" ref = "transactionManager"></property>
+    </bean>
+
+
+</beans>
