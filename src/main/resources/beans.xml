@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <bean id = "accountDao" class = "ioc.dao.impl.AccountDaoImpl">
+        <property name = "ConnectionUtils" ref = "connectionUtils"></property>
+    </bean>
+    <bean id = "transferService" class = "ioc.service.impl.TransferServiceImpl">
+        <property name = "AccountDao" ref = "accountDao"></property>
+    </bean>
+
+    <!--连接工具类-->
+    <bean id = "connectionUtils" class = "ioc.utils.ConnectionUtils"></bean>
+
+    <!--事务管理器-->
+    <bean id = "transactionManager" class = "ioc.utils.TransactionManager">
+        <property name = "ConnectionUtils" ref = "connectionUtils"></property>
+    </bean>
+
+
+    <bean id = "ProxyFactory" class = "ioc.spring.Factory.ProxyFactory">
+        <property name = "TransactionManager" ref = "transactionManager"></property>
+    </bean>
+
+</beans>
