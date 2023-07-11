@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MyspringApplication {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //ioc容器指定加载xml文件
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
@@ -19,6 +19,8 @@ public class MyspringApplication {
         ProxyFactory proxyFactory = (ProxyFactory)applicationContext.getBean("ProxyFactory");
         //获取实际代理对象
         TransferService jdkproxy = (TransferService)proxyFactory.getProxy(transferService);
+
+        jdkproxy.transfer("1","2",20);
 
 
     }

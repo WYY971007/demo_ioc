@@ -35,6 +35,7 @@ public class TransferServiceImpl implements TransferService {
 
             accountDao.updateAccountById(a);
 
+            int i = 1/0;
 
             accountDao.updateAccountById(b);
 

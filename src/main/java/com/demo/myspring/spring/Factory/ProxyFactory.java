@@ -15,7 +15,7 @@ public class ProxyFactory {
     private TransactionManager transactionManager;
 
     public void setTransactionManager(TransactionManager transactionManager) {
-        transactionManager = transactionManager;
+        this.transactionManager = transactionManager;
     }
 
 //    private ProxyFactory() {}
@@ -38,6 +38,7 @@ public class ProxyFactory {
                     transactionManager.commitTransactionManager();
                 } catch (Exception e) {
                     e.printStackTrace();
+                    System.out.println("事务回滚");
                     transactionManager.rollback();
                 }
                 return result;
