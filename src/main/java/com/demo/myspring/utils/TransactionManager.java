@@ -1,9 +1,16 @@
 package com.demo.myspring.utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import java.sql.SQLException;
 
+@Component("transactionManager")
 public class TransactionManager {
 
+    @Autowired
+    @Qualifier("connectionUtils")
     private ConnectionUtils connectionUtils;
 
     public void setConnectionUtils(ConnectionUtils connectionUtils) {

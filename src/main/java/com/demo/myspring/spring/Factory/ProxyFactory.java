@@ -3,20 +3,21 @@ package com.demo.myspring.spring.Factory;
 
 
 import com.demo.myspring.utils.TransactionManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 //代理工厂
+@Component("proxyFactory")
 public class ProxyFactory {
 
-
+    @Autowired
     private TransactionManager transactionManager;
 
-    public void setTransactionManager(TransactionManager transactionManager) {
-        this.transactionManager = transactionManager;
-    }
+
 
 //    private ProxyFactory() {}
 

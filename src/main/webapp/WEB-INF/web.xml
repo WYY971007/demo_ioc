@@ -6,9 +6,21 @@
 
 
 
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>classpath:XmlandAnnontation.xml</param-value>-->
+    <!--</context-param>-->
+
+    <!--告诉监听器，使用注解，监听配置类-->
+    <context-param>
+    <param-name>contextClass</param-name>
+    <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param>
+
+    <!--指定配置类路径-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml</param-value>
+        <param-value>com.demo.myspring.config.SpringConfiguration</param-value>
     </context-param>
 
     <!--使用监听器启动spring ioc-->

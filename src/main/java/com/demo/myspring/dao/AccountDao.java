@@ -2,6 +2,8 @@ package com.demo.myspring.dao;
 
 
 import com.demo.myspring.entity.Account;
+import org.springframework.stereotype.Repository;
+
 
 public interface AccountDao {
 

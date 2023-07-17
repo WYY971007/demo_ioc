@@ -4,14 +4,17 @@ package com.demo.myspring.dao.impl;
 import com.demo.myspring.dao.AccountDao;
 import com.demo.myspring.entity.Account;
 import com.demo.myspring.utils.ConnectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+@Repository
 public class AccountDaoImpl implements AccountDao {
 
-
+    @Autowired
     private ConnectionUtils connectionUtils;
 
     public void setConnectionUtils(ConnectionUtils connectionUtils) {
