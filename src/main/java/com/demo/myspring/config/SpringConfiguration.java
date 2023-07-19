@@ -1,6 +1,8 @@
 package com.demo.myspring.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.demo.myspring.entity.Company;
+import com.demo.myspring.spring.Factory.CompanyFactoryBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -33,6 +35,22 @@ public class SpringConfiguration {
         druidDataSource.setUsername(username);
         druidDataSource.setPassword(password);
         return druidDataSource;
+    }
+
+    @Bean("company")
+    public Company CreateCompany() {
+        CompanyFactoryBean companyFactoryBean = new CompanyFactoryBean();
+        companyFactoryBean.setCompanyinfo("wyy,中关村,999");
+        Company company = null;
+
+        try {
+            company = companyFactoryBean.getObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return company;
+
+
     }
 
 

@@ -2,12 +2,14 @@ package com.demo.myspring.utils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 @Component("connectionUtils")
+@Lazy
 public class ConnectionUtils {
 
     private String username;
