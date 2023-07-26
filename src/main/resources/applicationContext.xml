@@ -39,7 +39,7 @@
     <!--&lt;!&ndash;用于指定bean对象的消耗方法，此方法会在bean对象销毁前执行，只能为scope是singleton时起作用&ndash;&gt;-->
     <!--<bean id = "connectionUtils" factory-bean="creatBeanFactory"  factory-method="getInstanceConnectionUtils" init-method="init" destroy-method="destroy"></bean>-->
 
-    <bean id="company" class="com.demo.myspring.spring.Factory.CompanyFactoryBean">
-        <property name="companyinfo" value="wyy,中关村,999"></property>
-    </bean>
+    <!--<bean id="company" class="com.demo.myspring.spring.Factory.CompanyFactoryBean">-->
+        <!--<property name="companyinfo" value="wyy,中关村,999"></property>-->
+    <!--</bean>-->
 </beans>
